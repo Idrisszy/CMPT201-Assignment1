@@ -1,0 +1,76 @@
+/*------------------------------------------
+ Student’s Name: Idris Warfa
+ Assignment #1 - Testing Strategy Document
+ Lab Section: X02L
+ Lab Instructor’s Name: Salwa Abougamila
+--------------------------------------------*/
+
+# ---------------------------------------------
+# Testing Strategy for CMPT 201 - Assignment 1
+# ---------------------------------------------
+
+## Testing Overview
+This document outlines the testing strategy for all programs included in Assignment 1. The focus is on ensuring comprehensive test coverage for:
+- cardinalSort
+- countingCovid
+- xTable
+- squeeze
+
+## 1. cardinalSort Testing
+### Input Files:
+- `testCardinalSortIn.txt`: Contains multiple lines with varying ASCII characters, including whitespace, punctuation, and mixed-case letters.
+
+### Expected Output:
+- `correctCardinalSort.txt`: Correctly sorted ASCII characters for each line.
+
+### Test Cases:
+- Empty lines (no output expected).
+- Lines with all identical characters (expect a single sequence of characters).
+- Lines containing special characters and whitespace.
+- Very long input lines (buffer boundary testing).
+
+## 2. countingCovid Testing
+### Input Files:
+- `covidData.csv`: Sample dataset formatted per assignment requirements.
+
+### Expected Output:
+- `correctCountingCovid.txt`: Dates with corresponding aggregated COVID-19 case counts.
+
+### Test Cases:
+- Single entry per date.
+- Multiple entries per date.
+- Non-consecutive date entries.
+- Malformed CSV lines (ensuring graceful skipping).
+
+## 3. xTable Testing
+### Expected Output:
+- `correctXTable.txt`: Full table with results for x and y values from 5 to 100 in increments of 5.
+
+### Test Cases:
+- Boundary conditions for minimum (5) and maximum (100) values.
+- Manual calculation of select results for validation.
+- Verification of formatting (column alignment).
+
+## 4. squeeze Testing
+### Input Files:
+- `testSqueezeIn.txt`: Lines containing various repeated character sequences.
+
+### Expected Output:
+- `correctSqueeze.txt`: Correctly compressed output according to the specified logic.
+
+### Test Cases:
+- Short and long character sequences (including >9 repetitions).
+- Sequences at line boundaries.
+- Mixed character inputs (letters, numbers, symbols).
+- Empty input lines (should produce no output).
+
+## Automation Details
+- The provided `Makefile` includes rules under the `testing` target that automatically runs all test cases and checks output consistency using `diff`.
+- Manual inspection of edge cases for human-readable validation.
+
+## Conclusion
+The outlined testing strategy ensures thorough validation of all functional and edge cases required by the assignment. All outputs will be cross-checked to ensure correctness, formatting consistency, and robust handling of edge cases.
+
+# ---------------------------------------------
+# End of Testing Strategy Document
+# ---------------------------------------------
